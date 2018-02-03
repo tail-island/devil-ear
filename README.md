@@ -14,7 +14,7 @@ $ pip3 install --upgrade funcy h5py keras librosa pyaudio tensorflow-gpu
 $ python3 train.py
 ~~~
 
-速いGPUを持っていて待つのが苦にならないタイプの人は、train.pyの`return rcompose(squeeze_net(),  # wide_residual_net(),`を`return rcompose(wide_residual_net(),`にしてみてください。たぶん、少し精度が上がります。
+遅すぎて待っていられない場合は、train.pyの`return rcompose(wide_residual_net(),`を`return rcompose(squeeze_net(),`にしてみてください。学習速度が少し速くなります。たぶん、少し精度が落ちますけど。
 
 ## 訓練結果の確認
 

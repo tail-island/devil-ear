@@ -103,7 +103,7 @@ def computational_graph(class_size):
                         residual_block(640, 4),
                         global_average_pooling())
 
-    return rcompose(squeeze_net(),  # wide_residual_net(),
+    return rcompose(wide_residual_net(),  # squeeze_net(),
                     dense(256),
                     dense(class_size),
                     softmax())

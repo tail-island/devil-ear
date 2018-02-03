@@ -1,15 +1,10 @@
 import numpy   as np
-import os
 import os.path as path
 import pickle
 
 from funcy       import cat, count, juxt, map, mapcat, repeat
 from keras.utils import to_categorical
-from operator    import attrgetter
-
-
-def child_paths(directory):
-    return sorted(map(attrgetter('path'), os.scandir(directory)))
+from utlity      import child_paths
 
 
 def load_data(data_path='./data'):

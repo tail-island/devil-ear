@@ -1,7 +1,14 @@
+import os
+
 from collections           import ChainMap
 from funcy                 import butlast, concat, partial, repeatedly
 from keras                 import backend as K
 from keras.engine.topology import Layer
+from operator              import attrgetter
+
+
+def child_paths(directory):
+    return sorted(map(attrgetter('path'), os.scandir(directory)))
 
 
 class ZeroPadding(Layer):
