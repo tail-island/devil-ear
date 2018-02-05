@@ -38,4 +38,4 @@ $ python3 useless_absolute_pitch.py
 
 # Notes
 
-[解説](https://qiita.com/tail-island/items/d5ff77c82c61035c1007)
+[解説](https://qiita.com/tail-island/items/c82d70d1debfc63bc343)
