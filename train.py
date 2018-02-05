@@ -122,7 +122,7 @@ def main():
     model.compile(loss='sparse_categorical_crossentropy', optimizer=Adam(lr=0.0005), metrics=['accuracy'])  # 学習が安定しなかったので、学習率を下げてみました。正しい？
     model.summary()
 
-    results = model.fit(x_train, y_train, batch_size=100, epochs=400, validation_data=(x_validate, y_validate), callbacks=[ReduceLROnPlateau(factor=0.5, patience=20, verbose=1)])
+    results = model.fit(x_train, y_train, batch_size=100, epochs=300, validation_data=(x_validate, y_validate), callbacks=[ReduceLROnPlateau(factor=0.5, patience=20, verbose=1)])
 
     with open('./results/history.pickle', 'wb') as f:
         pickle.dump(results.history, f)
