@@ -5,7 +5,7 @@
 ## 準備
 
 ~~~ bash
-$ pip3 install --upgrade funcy h5py keras librosa pyaudio tensorflow-gpu
+$ pip3 install --upgrade funcy h5py keras librosa matplotlib pyaudio tensorflow-gpu
 ~~~
 
 ## 訓練

@@ -4,7 +4,7 @@ import os.path    as path
 import pyaudio
 import tensorflow as tf
 
-from funcy                        import first, second, take
+from funcy                        import first, second
 from keras.models                 import load_model
 from useless_absolute_pitch_frame import UselessAbsolutePitchFrame
 from utility                      import ZeroPadding, child_paths

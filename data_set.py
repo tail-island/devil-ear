@@ -4,7 +4,7 @@ import pickle
 
 from funcy       import cat, count, juxt, map, mapcat, repeat
 from keras.utils import to_categorical
-from utlity      import child_paths
+from utility     import child_paths
 
 
 def load_data(data_path='./data'):

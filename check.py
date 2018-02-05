@@ -1,8 +1,11 @@
-import numpy   as np
+import matplotlib.pyplot as plot
+import numpy             as np
+import pickle
 
 from data_set     import load_data
-from funcy        import distinct
+from funcy        import last, partial
 from keras.models import load_model
+from operator     import getitem
 from utility      import ZeroPadding
 
 
@@ -40,7 +43,24 @@ labels = ['M・A・O:若狭悠里',
           '高橋李衣:直樹美紀']
 
 
-def main():
+def plot_history():
+    def plot_values_collection(title, values_collection):
+        plot.clf()
+        plot.title(title)
+        for values in values_collection:
+            plot.plot(values)
+        plot.show()
+
+    with open('./results/history.pickle', 'rb') as f:
+        history = pickle.load(f)
+
+    print(last(history['val_acc']))
+
+    plot_values_collection('loss',     map(partial(getitem, history), ('loss', 'val_loss')))
+    plot_values_collection('accuracy', map(partial(getitem, history), ('acc',  'val_acc')))
+
+
+def print_predicts():
     _, (x, y) = load_data()
 
     x = ((x - -14.631151332833856) / 92.12358373202312).reshape(x.shape + (1,))
@@ -55,6 +75,11 @@ def main():
         print('{0}\t{1}'.format(labels[t], labels[p]))
 
     del model
+
+
+def main():
+    plot_history()
+    print_predicts()
 
 
 if __name__ == '__main__':
