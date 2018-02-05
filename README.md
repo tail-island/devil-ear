@@ -2,6 +2,8 @@
 
 ![比較的うまくいっている場合の例](https://raw.githubusercontent.com/tail-island/devil-ear/master/image/good-case.gif)
 
+＃あ、タマキじゃなくてキマリだった……。
+
 # Usage
 
 ## 準備
