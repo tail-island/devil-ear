@@ -1,4 +1,6 @@
-ダメ絶対音感を深層学習で実現してみました。ダメ相対音感くらいまではできたかなぁと。
+ダメ絶対音感を深層学習で実現してみました。ダメ「相対」音感くらいまではできたかなぁと。
+
+![比較的うまくいっている場合の例](https://raw.githubusercontent.com/tail-island/devil-ear/master/image/good-case.gif)
 
 # Usage
 
@@ -14,7 +16,7 @@ $ pip3 install --upgrade funcy h5py keras librosa matplotlib pyaudio tensorflow-
 $ python3 train.py
 ~~~
 
-遅すぎて待っていられない場合は、train.pyの`return rcompose(wide_residual_net(),`を`return rcompose(squeeze_net(),`にしてみてください。学習速度が少し速くなります。たぶん、少し精度が落ちますけど。
+学習が遅すぎて待っていられない場合は、train.pyの`return rcompose(wide_residual_net(),`を`return rcompose(squeeze_net(),`にしてみてください。学習速度が少し速くなります。たぶん、少し精度が落ちますけど。
 
 ## 訓練結果の確認
 
@@ -24,7 +26,7 @@ $ python3 check.py
 
 検証用データでの、`{正解の声優}:{正解のキャラ}\t{推測した声優}:{推測したキャラ}`が出力されます。
 
-キャラあたりの訓練データの数にばらつきがあるので、データ量が少ないキャラは間違えやすいです。無口キャラでデータ量が少ないはずなのに確実に識別される東山奈央の志摩リンすげー。
+キャラあたりの訓練データの数にばらつきがあるので、データ量が少ないキャラは間違えやすいです。無口キャラでデータ量が少ないはずなのに確実に識別される東山奈央さんの志摩リンすげー。
 
 ## ダメ絶対音感の実行
 
@@ -36,4 +38,4 @@ $ python3 useless_absolute_pitch.py
 
 # Notes
 
-xxx
+[解説](https://qiita.com/tail-island/items/d5ff77c82c61035c1007)
